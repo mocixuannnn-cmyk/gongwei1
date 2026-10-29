@@ -1,0 +1,7 @@
+Image generation: built-in image_gen.
+
+1. betty-kunfeng-tang.png: Original Tang Q-version chibi adult couple, fictional Li Kunfeng and Han Jiaxuan, using uploaded photographs only as facial-feature references. Li has rectangular dark glasses, side-swept hair, soft round face and teal round-collar Tang robe. Han has large dark eyes, wispy fringe and gold-vermilion Tang female-sovereign clothing. Both age 24; full bodies, holding hands, smiling, ivory background, peach blossoms, delicate painted gold embroidery. No text or watermark, no direct photo conversion.
+
+2. consorts-expanded.png: Eight distinct fully clothed adult Tang palace women in a 4-column 2-row full-body atlas, each cell 2:3, generous margins. Different faces, hairstyles, ornaments, jade/rose/lilac/ivory/indigo/cinnabar/yellow/silver-green colors. Delicate guofeng illustration, ivory background.
+
+3. royal-children-expanded.png: 4-column 2-row atlas with boy stages baby/5/12/20 on top, girl stages baby/5/12/20 on bottom. Full figures fit inside each 2:3 cell, age-appropriate fully clothed Tang outfits, silk embroidery, ivory backdrop.

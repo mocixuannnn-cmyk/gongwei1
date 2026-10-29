@@ -1,0 +1,24 @@
+{
+  "sourceVersion": 8,
+  "contentPreserved": true,
+  "runtimeGameJsMatchesPreview": true,
+  "assetHashesMatchPreview": true,
+  "javascriptAndLocalDependencyCheck": "passed",
+  "staticBuild": "passed",
+  "localHttpServer": "passed",
+  "servedFiles": [
+    "style.css",
+    "index.html",
+    "game.js",
+    "version.json",
+    "extra.css",
+    ".nojekyll",
+    "assets/consorts-expanded.png",
+    "assets/royal-children-expanded.png",
+    "assets/betty-kunfeng-tang.png",
+    "assets/palace-portraits.png",
+    "assets/portrait-v8-prompts.txt",
+    "assets/portrait-prompt.txt"
+  ],
+  "noChatGPTLoginRequired": true
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gong-wei-jiang-lin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "宫闱将临：独立运行的中式宫廷文字养成游戏",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs --dir dist",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

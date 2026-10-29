@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#241612">
+  <meta name="description" content="一款中式复古风格的后宫文字养成游戏。">
+  <title>宫闱将临｜一入宫门深似海</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <div class="paper-texture"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="宫闱将临首页"><span class="brand-seal">宫</span><span>宫闱将临</span></a>
+    <div class="top-meta"><span id="dateLabel">选秀前夜</span><span class="divider"></span><span id="saveStatus">未入宫</span></div>
+    <button class="icon-btn" id="soundToggle" title="音效开关" aria-label="音效开关">♫</button>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section class="intro-screen" id="introScreen">
+      <div class="intro-copy">
+        <p class="eyebrow">大唐 · 深宫录</p>
+        <h1>一入宫门<br><em>深似海</em></h1>
+        <p class="intro-lede">一纸选秀诏书，半生命运由此改写。<br>你将以何种姿态，在红墙之内走下去？</p>
+        <div class="intro-rule"><span>❦</span></div>
+        <p class="intro-note">你的出身、才情与运数，皆是故事的开端。<br>至于结局——由你亲手写下。</p>
+        <button class="primary-btn" id="beginBtn">翻开命簿 <span>→</span></button>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <div class="moon"></div><div class="roof roof-one"></div><div class="roof roof-two"></div>
+        <div class="palace"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="lantern lantern-a"><b></b></div><div class="lantern lantern-b"><b></b></div>
+        <div class="branch branch-a">✦　✧　✦</div><div class="branch branch-b">✧　✦　✧</div>
+        <div class="vertical-title">宫墙深处 · 命由己定</div>
+      </div>
+    </section>
+
+    <section class="setup-screen hidden" id="setupScreen">
+      <div class="setup-head"><p class="eyebrow">第一章 · 选秀入宫</p><h2>先看一看，<em>命簿上的你</em></h2><p>姓名可自行取定；其余天赋与家世由命运抽签。</p></div>
+      <div class="setup-grid">
+        <div class="setup-card name-card"><label for="playerName">闺名</label><div class="name-row"><input id="playerName" maxlength="8" placeholder="输入姓名，或留空随机取名"><button id="randomName" class="subtle-btn">随机</button></div><small>可输入二至四字姓名</small></div>
+        <div class="setup-card"><div class="card-heading"><span>家世门第</span><span class="stamp">命定</span></div><div id="familyValue" class="family-value">待抽签</div><p class="small-copy">门第将影响初始位分，也会改变部分人情往来。</p></div>
+        <div class="setup-card stats-card"><div class="card-heading"><span>先天资质</span><span class="small-copy">0—100</span></div><div id="statsPreview" class="stat-list"></div></div>
+        <div class="setup-card skills-card"><div class="card-heading"><span>闺中技艺</span><span class="small-copy">0—10</span></div><div id="skillsPreview" class="skill-list"></div></div>
+      </div>
+      <div class="setup-bottom"><p>命簿将随机生成其余妃嫔、皇后与隐藏的帝心。</p><button class="primary-btn" id="enterBtn">确认入宫 <span>→</span></button></div>
+    </section>
+
+    <section class="game-screen hidden" id="gameScreen">
+      <div class="game-heading"><div><p class="eyebrow" id="chapterLabel">第一章 · 初入禁中</p><h2 id="welcomeTitle">花开有时，<em>莫问归期</em></h2></div><div class="turn-badge">第 <b id="turnLabel">1</b> 回合</div></div>
+      <details class="rank-reference panel"><summary><span>唐代风格位分表</span><small>点击查看品阶与顺序　⌄</small></summary><div class="rank-grid"><div><b>中宫</b><span>皇后</span></div><div><b>正一品</b><span>贵妃、淑妃、德妃、贤妃</span></div><div><b>正二品</b><span>九嫔：昭仪、昭容、昭媛、修仪、修容、修媛、充仪、充容、充媛</span></div><div><b>正三品</b><span>婕妤</span></div><div><b>正四品</b><span>美人</span></div><div><b>正五品</b><span>才人</span></div><div><b>正六品</b><span>宝林</span></div><div><b>正七品</b><span>御女</span></div><div><b>正八品</b><span>采女</span></div></div><p class="rank-note">本表为游戏采用的唐代风格简化参考。</p></details>
+      <div class="dashboard">
+        <aside class="left-column">
+          <div class="profile-card panel"><div class="portrait"><span id="portraitInitial">沈</span><i>✿</i></div><div class="profile-name" id="profileName">沈令仪</div><div class="profile-rank" id="profileRank">才人</div><div class="profile-family" id="profileFamily">五品文官之女</div><div class="profile-divider"></div><div class="favor-label">圣眷</div><div class="favor-meter"><span id="favorMeter"></span><b id="favorText">未可知</b></div><small class="hidden-label">帝心深浅，外人难测</small><div class="profile-divider"></div><div class="profile-metrics"><div><span>威望</span><b id="prestigeValue">0</b></div><div><span>名声</span><b id="reputationValue">0</b></div><div><span>年岁</span><b id="ageValue">16</b></div><div><span>寿数</span><b id="lifeValue">未卜</b></div></div></div>
+          <div class="panel compact-panel"><div class="panel-title">命簿数值 <span>◇</span></div><div id="liveStats" class="live-stat-list"></div></div>
+          <div class="panel compact-panel relation-panel"><div class="panel-title">交好与交恶 <span>◇</span></div><div id="relationsList" class="relations-list"><p class="empty-note">暂无深交</p></div></div>
+          <div class="panel compact-panel"><div class="panel-title">宫中传闻 <span>◇</span></div><div id="rumorLog" class="rumor-list"><p class="empty-note">尚无新传闻</p></div></div>
+        </aside>
+        <section class="center-column">
+          <div class="story-panel panel"><div class="story-top"><span>宫闱纪事</span><span id="storyDate">贞观二年 · 春</span></div><div id="storyLog" class="story-log" aria-live="polite"></div><div class="event-box hidden" id="eventBox"></div></div>
+          <div class="actions-panel panel"><div class="panel-title">本回合行止 <small>选择一项行动</small></div><div class="action-grid">
+            <button class="action-card" data-action="attend"><span class="action-icon">☽</span><b>赴宴承宠</b><small>一展风姿，或逢迎圣意</small></button>
+            <button class="action-card" data-action="study"><span class="action-icon">✎</span><b>习文修艺</b><small>提升一项技艺与声望</small></button>
+            <button class="action-card" data-action="social"><span class="action-icon">❀</span><b>走访宫人</b><small>结交妃嫔，探听消息</small></button>
+            <button class="action-card" data-action="heir"><span class="action-icon">☼</span><b>承宠祈嗣</b><small>盼得帝心眷顾，求一线子嗣缘</small></button>
+            <button class="action-card" data-action="pray"><span class="action-icon">☯</span><b>焚香祈福</b><small>为圣眷或寿数祈愿</small></button>
+            <button class="action-card" data-action="rumor"><span class="action-icon">〰</span><b>暗中造谣</b><small>挑拨一位妃嫔的名声</small></button>
+            <button class="action-card danger-card" data-action="poison"><span class="action-icon">☠</span><b>暗施手段</b><small>设局陷害一位妃嫔</small></button>
+            <button class="action-card" data-action="rest"><span class="action-icon">☁</span><b>闭门养息</b><small>恢复健康，静观其变</small></button>
+          </div></div>
+          <div class="turn-footer"><span id="turnHint">每回合选择一项行动；行动后翻牌，三回合为一月。</span><button id="nextTurn" class="next-btn" disabled>翻牌入夜 <span>→</span></button></div>
+        </section>
+        <aside class="right-column">
+          <div class="panel compact-panel court-panel"><div class="panel-title">六宫人物 <span id="courtCount">0</span></div><div id="courtList" class="court-list"></div></div>
+          <div class="panel compact-panel skills-live-panel"><div class="panel-title">所习技艺 <span>◇</span></div><div id="liveSkills" class="skill-live-list"></div></div>
+          <div class="panel compact-panel offspring-panel"><div class="panel-title">子嗣簿 <span id="offspringCount">0</span></div><div id="offspringList" class="offspring-list"><p class="empty-note">尚无子嗣消息</p></div></div>
+          <div class="panel compact-panel objective-panel"><div class="panel-title">此生所求 <span>◇</span></div><div id="objectiveText">在深宫中，寻得自己的立足之地。</div></div>
+        </aside>
+      </div>
+      <div class="modal-backdrop hidden" id="choiceModal"><div class="choice-modal panel"><button class="modal-close" id="closeModal">×</button><p class="eyebrow" id="modalEyebrow">择人而行</p><h3 id="modalTitle">你要如何行事？</h3><p id="modalText"></p><div id="modalChoices" class="modal-choices"></div></div></div>
+      <div class="toast hidden" id="toast"></div>
+    </section>
+  </main>
+  <div class="modal-backdrop hidden" id="cheatBackdrop"><section class="cheat-modal panel" role="dialog" aria-modal="true" aria-labelledby="cheatTitle"><button class="modal-close" id="closeCheat">×</button><p class="eyebrow">命数之外</p><h3 id="cheatTitle">输入密令</h3><p>密令只在当前游戏中生效。</p><form id="cheatForm"><input id="cheatInput" type="password" autocomplete="off" aria-label="密令"><button class="primary-btn" type="submit">确认</button></form><div id="cheatReport" class="cheat-report hidden" aria-live="polite"></div></section></div>
+  <footer><span>宫闱将临</span><span>·</span><span>浮生若梦，皆在一念</span><span class="footer-right">纯属虚构 · 大唐风格架空故事</span></footer>
+  <script src="game.js"></script>
+</body>
+</html>
